@@ -1,8 +1,8 @@
 class Itermocil < Formula
-  desc "Termocil allows you setup pre-configured layouts of windows and panes in iTerm2, having each open in a specified directory and execute specified commands."
+  #desc "Termocil allows you setup pre-configured layouts of windows and panes in iTerm2, having each open in a specified directory and execute specified commands."
   homepage "https://github.com/TomAnthony/itermocil"
-  url "https://github.com/TomAnthony/itermocil/archive/0.1.1.tar.gz"
-  sha256 "c562896f8b912f00cf0ee23e5d05ffb9bb469329b065e2ebf9015b0edd674b55"
+  url "https://github.com/TomAnthony/itermocil/archive/0.1.2.tar.gz"
+  sha256 "cbaa522d0d387b745c3fee1ac0c6d0ea73679a7cb016bc7dceb3d611d0397827"
 
   resource "PyYAML" do
     url "https://pypi.python.org/packages/source/P/PyYAML/PyYAML-3.11.tar.gz"
