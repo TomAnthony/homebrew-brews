@@ -3,7 +3,7 @@ require "formula"
 class Squid < Formula
   homepage "http://www.squid-cache.org/"
   url "http://www.squid-cache.org/Versions/v3/3.4/squid-3.4.12.tar.bz2"
-  sha1 "e5291d1a556313712410cf6297f08e895a2d679a"
+  sha256 "cc4e7f45ef0823ed914f8205bddbb05f4d1625027fa0b1ed761bcf9e47316022"
 
   bottle do
     sha256 "9db04b2b64b0e14f1f0698d6fc35734bb4f52706e4dcd54dc6a897810eb15813" => :yosemite
@@ -15,7 +15,7 @@ class Squid < Formula
 
   def install
     # http://stackoverflow.com/questions/20910109/building-squid-cache-on-os-x-mavericks
-    ENV.append "LDFLAGS",  "-lresolv"
+    ENV.append "LDFLAGS", "-lresolv"
 
     # For --disable-eui, see:
     # http://squid-web-proxy-cache.1019090.n4.nabble.com/ERROR-ARP-MAC-EUI-operations-not-supported-on-this-operating-system-td4659335.html
@@ -60,4 +60,3 @@ class Squid < Formula
     EOS
   end
 end
-
