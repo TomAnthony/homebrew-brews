@@ -1,8 +1,8 @@
 class Itermocil < Formula
   # desc "iTermocil allows you setup pre-configured layouts of panes in iTerm2."
   homepage "https://github.com/TomAnthony/itermocil"
-  url "https://github.com/TomAnthony/itermocil/archive/0.1.8.tar.gz"
-  sha256 "6ad203858734ace6ff103b89d3ee54805aeadb94dde78b29dbdb43351b122607"
+  url "https://github.com/TomAnthony/itermocil/archive/0.2.0.tar.gz"
+  sha256 "5125fa23c3007c811b1b9b0ca189fc1ccba477b9455090d2e392cd704759ce9b"
 
   resource "PyYAML" do
     url "https://pypi.python.org/packages/source/P/PyYAML/PyYAML-3.11.tar.gz"
@@ -10,15 +10,16 @@ class Itermocil < Formula
   end
 
   def install
-    resource("PyYAML").stage { system "python", *Language::Python.setup_install_args(libexec/"vendor") }
     ENV.prepend_create_path "PYTHONPATH", libexec/"vendor/lib/python2.7/site-packages"
+
     %w[PyYAML].each do |r|
       resource(r).stage do
         system "python", *Language::Python.setup_install_args(libexec/"vendor")
       end
     end
 
-    ENV.prepend_create_path "PYTHONPATH", libexec
+    ENV.prepend_create_path "PYTHONPATH", libexec/"lib/python2.7/site-packages"
+    system "python", *Language::Python.setup_install_args(libexec)
 
     bin.install "itermocil"
     bin.install "itermocil.py"
