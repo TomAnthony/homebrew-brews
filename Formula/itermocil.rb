@@ -24,7 +24,7 @@ class Itermocil < Formula
     bin.install "itermocil"
     bin.install "itermocil.py"
 
-    bin.env_script_all_files(libexec/"bin", :PYTHONPATH => ENV["PYTHONPATH"])
+    bin.env_script_all_files(libexec/"bin", PYTHONPATH: ENV["PYTHONPATH"])
   end
 
   test do
