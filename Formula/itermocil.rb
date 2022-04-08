@@ -10,7 +10,7 @@ class Itermocil < Formula
   end
 
   def install
-    ENV.prepend_create_path "PYTHONPATH", libexec/"vendor/lib/python2.7/site-packages"
+    ENV.prepend_create_path "PYTHONPATH", libexec/"vendor/lib/python3.9/site-packages"
 
     %w[PyYAML].each do |r|
       resource(r).stage do
@@ -18,7 +18,7 @@ class Itermocil < Formula
       end
     end
 
-    ENV.prepend_create_path "PYTHONPATH", libexec/"lib/python2.7/site-packages"
+    ENV.prepend_create_path "PYTHONPATH", libexec/"lib/python3.9/site-packages"
     system "python", *Language::Python.setup_install_args(libexec)
 
     bin.install "itermocil"
