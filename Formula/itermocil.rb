@@ -14,12 +14,12 @@ class Itermocil < Formula
 
     %w[PyYAML].each do |r|
       resource(r).stage do
-        system "python", *Language::Python.setup_install_args(libexec/"vendor")
+        system "python3", *Language::Python.setup_install_args(libexec/"vendor")
       end
     end
 
     ENV.prepend_create_path "PYTHONPATH", libexec/"lib/python3.9/site-packages"
-    system "python", *Language::Python.setup_install_args(libexec)
+    system "python3", *Language::Python.setup_install_args(libexec)
 
     bin.install "itermocil"
     bin.install "itermocil.py"
