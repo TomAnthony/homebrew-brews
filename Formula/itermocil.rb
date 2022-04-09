@@ -1,8 +1,8 @@
 class Itermocil < Formula
   # desc "iTermocil allows you setup pre-configured layouts of panes in iTerm2."
   homepage "https://github.com/TomAnthony/itermocil"
-  url "https://github.com/TomAnthony/itermocil/archive/1.0.1.tar.gz"
-  sha256 "371b69b6ab3cbf3156cb977cd035ccf94f953347c5c0c3f99da97f339eac7a7f"
+  url "https://github.com/TomAnthony/itermocil/archive/1.0.2.tar.gz"
+  sha256 "0bbe4101c845298b468b1d76ccd96ee3dc914542ab2ee110242e6f393c260150"
 
   resource "PyYAML" do
     url "https://pypi.python.org/packages/source/P/PyYAML/PyYAML-3.11.tar.gz"
