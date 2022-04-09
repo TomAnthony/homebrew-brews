@@ -1,30 +1,21 @@
 class Itermocil < Formula
-  # desc "iTermocil allows you setup pre-configured layouts of panes in iTerm2."
+  include Language::Python::Virtualenv
+
+  desc "Allows you setup pre-configured layouts of panes in iTerm2"
   homepage "https://github.com/TomAnthony/itermocil"
   url "https://github.com/TomAnthony/itermocil/archive/1.0.2.tar.gz"
   sha256 "9577a2ad59fad33ec09d457e46bcb8af06b92ce65869e9d99d56a7f834deb513"
+  license "MIT"
+
+  depends_on "python@3.10"
 
   resource "PyYAML" do
-    url "https://pypi.python.org/packages/source/P/PyYAML/PyYAML-3.11.tar.gz"
-    sha256 "c36c938a872e5ff494938b33b14aaa156cb439ec67548fcab3535bb78b0846e8"
+    url "https://files.pythonhosted.org/packages/36/2b/61d51a2c4f25ef062ae3f74576b01638bebad5e045f747ff12643df63844/PyYAML-6.0.tar.gz"
+    sha256 "68fb519c14306fec9720a2a5b45bc9f0c8d1b9c72adf45c37baedfcd949c35a2"
   end
 
   def install
-    ENV.prepend_create_path "PYTHONPATH", libexec/"vendor/lib/python3.9/site-packages"
-
-    %w[PyYAML].each do |r|
-      resource(r).stage do
-        system "python3", *Language::Python.setup_install_args(libexec/"vendor")
-      end
-    end
-
-    ENV.prepend_create_path "PYTHONPATH", libexec/"lib/python3.9/site-packages"
-    system "python3", *Language::Python.setup_install_args(libexec)
-
-    bin.install "itermocil"
-    bin.install "itermocil.py"
-
-    bin.env_script_all_files(libexec/"bin", :PYTHONPATH => ENV["PYTHONPATH"])
+    virtualenv_install_with_resources
   end
 
   test do
