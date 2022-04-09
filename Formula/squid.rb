@@ -1,5 +1,3 @@
-require "formula"
-
 class Squid < Formula
   homepage "http://www.squid-cache.org/"
   url "http://www.squid-cache.org/Versions/v3/3.4/squid-3.4.12.tar.bz2"
@@ -27,10 +25,11 @@ class Squid < Formula
     ]
 
     system "./configure", *args
-    system "make install"
+    system "make", "install"
   end
 
-  def plist; <<-EOS.undent
+  def plist
+    <<-EOS.undent
     <?xml version="1.0" encoding="UTF-8"?>
     <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
     <plist version="1.0">
