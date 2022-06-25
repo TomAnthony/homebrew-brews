@@ -3,8 +3,8 @@ class Itermocil < Formula
 
   desc "Allows you setup pre-configured layouts of panes in iTerm2"
   homepage "https://github.com/TomAnthony/itermocil"
-  url "https://github.com/TomAnthony/itermocil/archive/1.0.2.tar.gz"
-  sha256 "9577a2ad59fad33ec09d457e46bcb8af06b92ce65869e9d99d56a7f834deb513"
+  url "https://github.com/TomAnthony/itermocil/archive/1.0.3.tar.gz"
+  sha256 "c5947941b96009cafcb3d65931bc3bf53efd86ae9540ccfb1015123b0f963ebf"
   license "MIT"
 
   depends_on "python@3.10"
